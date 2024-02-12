@@ -1,12 +1,16 @@
 import {
   STORAGE_KEY_STUDIO,
-  STORAGE_KEY_USERS,
+  STORAGE_KEY_USER,
   saveToStorage,
   loadFromStorage,
-  makeId,
+  utilService,
 } from "./util.service.js";
 
 // Initial Data stored in local storage / when no Data is stored it creates data.
+// export const dbInitStorageService = {
+//   createDatabase,
+// };
+
 createDatabase();
 
 function createDatabase() {
@@ -15,7 +19,7 @@ function createDatabase() {
 }
 
 function _createUsers() {
-  if (!loadFromStorage(STORAGE_KEY_USERS)) {
+  if (!loadFromStorage(STORAGE_KEY_USER)) {
     const users = [
       {
         _id: "u101",
@@ -45,7 +49,7 @@ function _createUsers() {
           "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
       },
     ];
-    saveToStorage(STORAGE_KEY_USERS, users);
+    saveToStorage(STORAGE_KEY_USER, users);
   }
 }
 
@@ -56,6 +60,7 @@ function _createStudios() {
         _id: "s1",
         title: "House-Tech-Jazz",
         description: "Need Sax for the Project.",
+
         members: [
           {
             _id: "u101",
@@ -70,11 +75,7 @@ function _createStudios() {
               "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg",
           },
         ],
-        projectFiles: {
-          id: makeId(),
-        },
-        _id: "s1",
-        _id: "s1",
+        projectFiles: {},
       },
     ];
     saveToStorage(STORAGE_KEY_STUDIO, studios);
