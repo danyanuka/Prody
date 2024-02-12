@@ -1,30 +1,33 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: OpenSans, sans-serif;
-    font-size: 16px;
-    scroll-behavior: smooth;
-    overflow: hidden;
+  font-family: OpenSans, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: $clr-text-black;
+  scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-        "Droid Sans", "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 ul {
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 h1,
@@ -34,52 +37,51 @@ h4,
 h5,
 h6,
 p {
-    margin: 0;
-    font-weight: normal;
-    padding: 0;
+  margin: 0;
+  font-weight: normal;
+  padding: 0;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 
-    &:hover {
-        text-decoration: underline;
-    }
-
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 button {
-    font-family: inherit;
-    cursor: pointer;
-    background-color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: inherit;
 
-    * {
-        pointer-events: none;
-    }
+  * {
+    pointer-events: none;
+  }
 }
 
 input {
-    font-family: inherit;
-    text-align: inherit;
+  font-family: inherit;
+  text-align: inherit;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
 textarea:focus {
-    outline: none;
+  outline: none;
 }
 
 a.active {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 svg {
-    fill: white;
-    box-sizing: content-box;
-    height: 24px;
-    width: 24px;
+  fill: white;
+  box-sizing: content-box;
+  height: 24px;
+  width: 24px;
 }

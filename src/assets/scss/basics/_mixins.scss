@@ -1,0 +1,26 @@
+@mixin fontProps($fontSize, $fontWeight, $lineHeight: null) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+}
+
+@mixin transitionAction(
+  $property,
+  $hoverValue,
+  $transitionTime,
+  $action: hover
+) {
+  transition: $property $transitionTime ease-out 0s;
+
+  &:#{$action} {
+    #{$property}: $hoverValue;
+  }
+}
+
+@mixin btnColors($colorHover, $colorActive, $color: transparent) {
+  border-radius: 3px;
+  border-width: 0px;
+  background-color: $color;
+  @include transitionAction(background-color, $colorHover, 10ms);
+  @include transitionAction(background-color, $colorActive, 10ms, active);
+}
