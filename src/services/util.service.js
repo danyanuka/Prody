@@ -1,6 +1,7 @@
 export const utilService = {
   saveToStorage,
   loadFromStorage,
+  makeId,
 };
 
 // Local DB Keys &  Load/Save funcs
@@ -16,3 +17,13 @@ function loadFromStorage(key) {
   return data ? JSON.parse(data) : undefined;
 }
 // __________________________________________________
+
+function makeId(length = 5) {
+  var text = "";
+  var possible =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for (var i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
+}

@@ -1,29 +1,21 @@
-import { utilService } from "../util.service.js";
+import { STORAGE_KEY_STUDIO } from "../util.service.js";
 import { storageService } from "../async-storage.service.js";
 
-_createCars();
-
-export const carService = {
+export const studioService = {
   query,
   get,
   remove,
   save,
-  getEmptyCar,
-  getDefaultFilter,
 };
 
 async function query(filterBy = {}) {
-  var cars = await storageService.query(CAR_KEY);
+  const studios = await storageService.query(STORAGE_KEY_STUDIO);
 
-  if (filterBy.txt) {
-    const regExp = new RegExp(filterBy.txt, "i");
-    cars = cars.filter((car) => regExp.test(car.vendor));
-  }
-
-  if (filterBy.minSpeed) {
-    cars = cars.filter((car) => car.speed >= filterBy.minSpeed);
-  }
-  return cars;
+  // if (filterBy.txt) {
+  //   const regExp = new RegExp(filterBy.txt, "i");
+  //   studios = studios.filter((studio) => regExp.test(studio.title));
+  // }
+  return studios;
 }
 
 function get(carId) {
