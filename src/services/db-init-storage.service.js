@@ -6,10 +6,9 @@ import {
   utilService,
 } from "./util.service.js";
 
-// Initial Data stored in local storage / when no Data is stored it creates data.
-// export const dbInitStorageService = {
-//   createDatabase,
-// };
+// WHEN WORKING LOCALLY Initiates Data in local storage / when no Data is stored it creates data.
+// The file is independant, it means it has to be called from some enty-level comp like main.jsx so the Function call will be triggered.
+// Can be removed when working with DB
 
 createDatabase();
 
