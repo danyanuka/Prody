@@ -1,8 +1,8 @@
-const SET_STUDIOS = "SET_STUDIOS";
-const ADD_STUDIOS = "ADD_STUDIOS";
-const REMOVE_STUDIO = "REMOVE_STUDIO";
-const UPDATE_STUDIO = "UPDATE_STUDIO";
-const SET_STUDIO = " SET_STUDIO";
+export const SET_STUDIOS = "SET_STUDIOS";
+export const ADD_STUDIO = "ADD_STUDIO";
+export const REMOVE_STUDIO = "REMOVE_STUDIO";
+export const UPDATE_STUDIO = "UPDATE_STUDIO";
+export const SET_STUDIO = " SET_STUDIO";
 
 const initState = {
   studios: null,
@@ -17,7 +17,7 @@ export function studioReducer(state = initState, action = {}) {
     // SET_STUDIO Not sure if will be needed
     case SET_STUDIO:
       return { ...state, currStudio: action.studio };
-    case ADD_STUDIOS:
+    case ADD_STUDIO:
       return { ...state, studios: [...state.studios, action.studio] };
     case REMOVE_STUDIO:
       return {
@@ -35,6 +35,6 @@ export function studioReducer(state = initState, action = {}) {
       };
 
     default:
-      break;
+      return state;
   }
 }

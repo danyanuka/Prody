@@ -59,7 +59,7 @@ function _createStudios() {
         _id: "s1",
         title: "House-Tech-Jazz",
         description: "Need Sax for the Project.",
-
+        previewAudio: "",
         members: [
           {
             _id: "u101",
@@ -74,7 +74,7 @@ function _createStudios() {
               "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg",
           },
         ],
-        projectFiles: {},
+        projectFolder: {},
       },
     ];
     saveToStorage(STORAGE_KEY_STUDIO, studios);
