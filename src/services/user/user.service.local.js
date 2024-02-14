@@ -37,7 +37,7 @@ async function update(userToUpdate) {
     ...user,
     ...userToUpdate,
   });
-  if (getLoggedinUser().id === updatedUser.id) saveLocalUser(updatedUser);
+  if (getLoggedinUser().id === updatedUser.id) saveSessionUser(updatedUser);
   return updatedUser;
 }
 
@@ -45,7 +45,7 @@ async function login(userCred) {
   const users = await storageService.query(STORAGE_KEY_USER);
   const user = users.find((user) => user.username === userCred.username);
   if (user) {
-    return saveLocalUser(user);
+    return saveSessionUser(user);
   } else {
     throw "Invalid user name";
   }
@@ -55,7 +55,7 @@ async function signup(userCred) {
   const fullnameTitled = utilService.toTitleCase(userCred.fullname);
   userCred.fullname = fullnameTitled;
   const user = await storageService.post("users", userCred);
-  return saveLocalUser(user);
+  return saveSessionUser(user);
 }
 
 async function logout() {
