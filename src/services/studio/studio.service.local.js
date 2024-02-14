@@ -3,7 +3,7 @@ import { storageService } from "../async-storage.service.js";
 
 export const studioService = {
   query,
-  get,
+  getById,
   remove,
   save,
 };
@@ -17,7 +17,7 @@ async function query(filterBy = {}) {
   return studios;
 }
 
-function get(studioId) {
+function getById(studioId) {
   return storageService.get(STORAGE_KEY_STUDIO, studioId);
 }
 
@@ -29,13 +29,13 @@ function save(studioToSave) {
   if (studioToSave._id) {
     return storageService.put(STORAGE_KEY_STUDIO, studioToSave);
   } else {
-    const initStudio = _createStudio();
+    const initStudio = _getEmptyStudio();
     const studio = { ...initStudio, ...studio };
     return storageService.post(STORAGE_KEY_STUDIO, studio);
   }
 }
 
-function _createStudio() {
+function _getEmptyStudio() {
   const studio = {
     _id: utilService.makeId(),
     title: "",
