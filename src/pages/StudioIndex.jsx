@@ -1,3 +1,3 @@
 export function StudioIndex() {
-  return <p>Hello</p>;
+  return <div></div>;
 }

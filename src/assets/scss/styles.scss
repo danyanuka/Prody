@@ -4,7 +4,9 @@ correctly so the output file will contain the
 imported file and data, and not the "import" command. 
 https://sass-lang.com/documentation/at-rules/import/#plain-css-imports
 */
-
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 /*  Basics */
 @import "basics/variables";
 @import "basics/mixins";
