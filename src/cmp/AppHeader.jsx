@@ -5,7 +5,7 @@ import { NavLink, Link } from "react-router-dom";
 
 export function AppHeader() {
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark"
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "retro"
   );
 
   useEffect(() => {
@@ -17,11 +17,14 @@ export function AppHeader() {
   function handleToggle(e) {
     if (e.target.checked) {
       setTheme("dark");
-    } else setTheme("light");
+    } else setTheme("retro");
   }
 
   return (
-    <div className={`navbar bg-accent text-accent-content sm:px-8 `}>
+    <div
+      className={`navbar bg-accent text-secondary-content lg:px-12 
+      `}
+    >
       <div className="flex-1">
         <Link to={"/"} className="btn btn-ghost p-0 hover:no-underline">
           <h1 className="text-lg font-bold mx-4">Prody</h1>

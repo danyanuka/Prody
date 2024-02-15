@@ -7,13 +7,11 @@ import { AppHeader } from "./cmp/AppHeader";
 export function App() {
   return (
     <Router>
-      <div className="app-container">
-        <AppHeader />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/studio" element={<StudioIndex />} />
-        </Routes>
-      </div>
+      <AppHeader />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/studio" element={<StudioIndex />} />
+      </Routes>
     </Router>
   );
 }
